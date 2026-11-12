@@ -69,10 +69,18 @@
                 </td>
                 <td>
                     <a class="btn btn-info" asp-action="Upsert" asp-route-Id="@item.WeaponId"><i class="fa-solid fa-pen-to-square"></i> &nbsp;@Locals["Edit"]</a>
-                    @*<a class="btn btn-warning" asp-action="Details" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-circle-info"></i> &nbsp;@Locals["Details"]</a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-trash-can"></i> &nbsp;@Locals["Delete"]</a>*@
+                    <a class="btn btn-warning" asp-action="Details" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-circle-info"></i> &nbsp;@Locals["Details"]</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-trash-can"></i> &nbsp;@Locals["Delete"]</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        $("tr.WeaponList")
+        .on("mouseenter", function() { $(this).addClass("highlight"); })
+        .on("mouseleave", function() { $(this).removeClass("highlight"); });
+    </script>
+}
